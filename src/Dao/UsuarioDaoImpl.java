@@ -24,14 +24,14 @@ public class UsuarioDaoImpl implements UsuarioDao {
     private ResultSet rs;
 
     @Override
-    public boolean isExistUser(int usuarioId, String contraseña) {
+    public boolean isExistUser(int usuarioId, String contrasena) {
         boolean respuesta = false;
 
         try {
             con = Conexion.SQLSERVER2017();
-            ps = con.prepareStatement("SELECT * FROM Usuario WHERE id=? AND contraseña=?");
+            ps = con.prepareStatement("SELECT * FROM Usuario WHERE id=? AND contrasena=?");
             ps.setInt(1, usuarioId);
-            ps.setString(2, contraseña);
+            ps.setString(2, contrasena);
 
             rs = ps.executeQuery();
 
@@ -39,6 +39,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
                 respuesta = true;
             }
         } catch (Exception ex) {
+            System.out.println("Error: " + ex.getMessage());
             JOptionPane.showMessageDialog(null, "Error: Red desconocida.. ponganse en contacto con el Soporte", ".: Sistema", JOptionPane.ERROR_MESSAGE);
         }
 

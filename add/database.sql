@@ -22,7 +22,7 @@ CREATE TABLE Usuario(
 	dni INT NOT NULL,
 	correo VARCHAR(100),
 	celular INT NOT NULL,
-	contraseña VARCHAR(100) NOT NULL,
+	contrasena VARCHAR(100) NOT NULL,
 	tipoId INT NOT NULL,
 	FOREIGN KEY (tipoId) REFERENCES TipoUsuario(id)
 )
@@ -102,13 +102,13 @@ CREATE PROCEDURE spClienteInsert
 	@dni INT,
 	@correo VARCHAR(100),
 	@celular INT,
-	@contraseña VARCHAR(100),
+	@contrasena VARCHAR(100),
 	@tarjeta VARCHAR(100)
 AS
 BEGIN 
 	DECLARE @last_id INT;
 	
-	INSERT INTO Usuario (nombres,apellidos,dni,correo,celular,contraseña,tipoId) VALUES (@nombres,@apellidos,@dni,@correo,@celular,@contraseña,2);
+	INSERT INTO Usuario (nombres,apellidos,dni,correo,celular,contrasena,tipoId) VALUES (@nombres,@apellidos,@dni,@correo,@celular,@contrasena,2);
 	SELECT @last_id = MAX(id) FROM Usuario;
 	INSERT INTO Cliente VALUES (@last_id,@tarjeta);
 END;
@@ -121,7 +121,7 @@ CREATE PROCEDURE spClienteUpdate
 	@dni INT,
 	@correo VARCHAR(100),
 	@celular INT,
-	@contraseña VARCHAR(100),
+	@contrasena VARCHAR(100),
 	@tarjeta VARCHAR(100)
 AS
 BEGIN 		
@@ -131,7 +131,7 @@ BEGIN
 		dni=@dni,
 		correo=@correo,
 		celular=@celular,
-		contraseña=@contraseña 
+		contrasena=@contrasena
 	WHERE id=@id;
 
 	UPDATE Cliente SET
@@ -197,11 +197,11 @@ INSERT INTO TipoUsuario VALUES (2,'Cliente');
 ---
 -- USUARIOS
 INSERT INTO Usuario 
-(nombres,apellidos,dni,correo,celular,contraseña,tipoId) VALUES 
+(nombres,apellidos,dni,correo,celular,contrasena,tipoId) VALUES
 ('Danny Williams','Olivera Ponce',70918000,'danny.olivera@utp.edu.pe',981128129,'123',1);
 
 INSERT INTO Usuario 
-(nombres,apellidos,dni,correo,celular,contraseña,tipoId) VALUES 
+(nombres,apellidos,dni,correo,celular,contrasena,tipoId) VALUES
 ('Julian Eduardo','Torres Perez',70918034,'julian.torres@utp.edu.pe',984228129,'123',2);
 
 -- VENDEDOR
@@ -213,4 +213,4 @@ INSERT INTO Cliente VALUES (100002,'1230-1345-1234-1235');
 -- PELICULAS
 INSERT INTO Pelicula 
 (titulo,categoria,fecha,duracion,idioma) VALUES 
-('Thor: Amor y Trueno','Acción','2022-07-11','2:30','Español');
+('Thor: Amor y Trueno','AcciÃ³n','2022-07-11','2:30','EspaÃ±ol');

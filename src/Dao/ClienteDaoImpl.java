@@ -28,13 +28,13 @@ public class ClienteDaoImpl implements ClienteDao {
 
         try {
             con = Conexion.SQLSERVER2017();
-            ps = con.prepareStatement("EXEC spClienteInsert @nombres=?,@apellidos=?,@dni=?,@correo=?,@celular=?,@contraseña=?,@tarjeta=?;");
+            ps = con.prepareStatement("EXEC spClienteInsert @nombres=?,@apellidos=?,@dni=?,@correo=?,@celular=?,@contrasena=?,@tarjeta=?;");
             ps.setString(1, cliente.getNombres());
             ps.setString(2, cliente.getApellidos());
             ps.setInt(3, cliente.getDni());
             ps.setString(4, cliente.getCorreo());
             ps.setInt(5, cliente.getCelular());
-            ps.setString(6, cliente.getContraseña());
+            ps.setString(6, cliente.getContrasena());
             ps.setString(7, cliente.getTarjeta());
             ps.executeUpdate();
 
@@ -47,14 +47,14 @@ public class ClienteDaoImpl implements ClienteDao {
     public void update(Cliente cliente) {
         try {
             con = Conexion.SQLSERVER2017();
-            ps = con.prepareStatement("EXEC spClienteUpdate @id=?,@nombres=?,@apellidos=?,@dni=?,@correo=?,@celular=?,@contraseña=?,@tarjeta=?;");
+            ps = con.prepareStatement("EXEC spClienteUpdate @id=?,@nombres=?,@apellidos=?,@dni=?,@correo=?,@celular=?,@contrasena=?,@tarjeta=?;");
             ps.setInt(1, cliente.getCodigo());
             ps.setString(2, cliente.getNombres());
             ps.setString(3, cliente.getApellidos());
             ps.setInt(4, cliente.getDni());
             ps.setString(5, cliente.getCorreo());
             ps.setInt(6, cliente.getCelular());
-            ps.setString(7, cliente.getContraseña());
+            ps.setString(7, cliente.getContrasena());
             ps.setString(8, cliente.getTarjeta());
             ps.executeUpdate();
         } catch (Exception ex) {
@@ -80,7 +80,7 @@ public class ClienteDaoImpl implements ClienteDao {
 
         try {
             con = Conexion.SQLSERVER2017();
-            ps = con.prepareStatement("SELECT u.id,u.nombres,u.apellidos,u.dni,u.correo,u.celular,u.contraseña,c.tarjeta FROM Usuario AS u INNER JOIN Cliente AS c ON u.id = c.usuarioId WHERE u.tipoId = 2;");
+            ps = con.prepareStatement("SELECT u.id,u.nombres,u.apellidos,u.dni,u.correo,u.celular,u.contrasena,c.tarjeta FROM Usuario AS u INNER JOIN Cliente AS c ON u.id = c.usuarioId WHERE u.tipoId = 2;");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -92,7 +92,7 @@ public class ClienteDaoImpl implements ClienteDao {
                 clienteT.setDni(rs.getInt("dni"));
                 clienteT.setCorreo(rs.getString("correo"));
                 clienteT.setCelular(rs.getInt("celular"));
-                clienteT.setContraseña(rs.getString("contraseña"));
+                clienteT.setContrasena(rs.getString("contrasena"));
                 clienteT.setTarjeta(rs.getString("tarjeta"));
 
                 elementos.add(clienteT);

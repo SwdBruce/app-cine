@@ -15,8 +15,8 @@ public class UsuarioController {
 
     private UsuarioDao usuarioDao = new UsuarioDaoImpl();
 
-    public boolean isExistUser(int usuarioId, String contraseña) {
-        boolean respuesta = respuesta = usuarioDao.isExistUser(usuarioId, contraseña);
+    public boolean isExistUser(int usuarioId, String contrasena) {
+        boolean respuesta = respuesta = usuarioDao.isExistUser(usuarioId, contrasena);
         return respuesta;
     }
 

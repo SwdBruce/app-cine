@@ -368,9 +368,9 @@ public class VendedorCliente extends javax.swing.JDialog {
             int DNI = Integer.parseInt(txtDNI.getText());
             String Correo = txtCorreo.getText();
             int Celular = Integer.parseInt(txtCelular.getText());
-            String Contraseña = txtContraseña.getText();
+            String Contrasena = txtContraseña.getText();
             String Tarjeta = txtTarjeta.getText();
-            Cliente cliente = new Cliente(id, Nombres, Apellidos, DNI, Correo, Celular, Contraseña, 2, Tarjeta);
+            Cliente cliente = new Cliente(id, Nombres, Apellidos, DNI, Correo, Celular, Contrasena, 2, Tarjeta);
             if (Opc == 1) {
                 clienteController.insert(cliente);
                 Mensaje = "Nuevo cliente registrado exitosamente";
@@ -489,7 +489,7 @@ public class VendedorCliente extends javax.swing.JDialog {
                 clienteT.getDni(),
                 clienteT.getCorreo(),
                 clienteT.getCelular(),
-                clienteT.getContraseña(),
+                clienteT.getContrasena(),
                 clienteT.getTarjeta(),});
         }
         Color fondo = new Color(102, 102, 102);

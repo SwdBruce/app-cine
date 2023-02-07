@@ -9,8 +9,8 @@ public class Vendedor extends Usuario {
         super();
     }
 
-    public Vendedor(String horario, double sueldo, int codigo, String nombres, String apellidos, int dni, String correo, int celular, String contraseña, int usuarioTipoId) {
-        super(codigo, nombres, apellidos, dni, correo, celular, contraseña, usuarioTipoId);
+    public Vendedor(String horario, double sueldo, int codigo, String nombres, String apellidos, int dni, String correo, int celular, String contrasena, int usuarioTipoId) {
+        super(codigo, nombres, apellidos, dni, correo, celular, contrasena, usuarioTipoId);
         this.horario = horario;
         this.sueldo = sueldo;
     }

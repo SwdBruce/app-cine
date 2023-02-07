@@ -12,8 +12,8 @@ public class Cliente extends Usuario {
         this.tarjeta = tarjeta;
     }
 
-    public Cliente(int codigo, String nombres, String apellidos, int dni, String correo, int celular, String contraseña, int usuarioTipoId, String tarjeta) {
-        super(codigo, nombres, apellidos, dni, correo, celular, contraseña, usuarioTipoId);
+    public Cliente(int codigo, String nombres, String apellidos, int dni, String correo, int celular, String contrasena, int usuarioTipoId, String tarjeta) {
+        super(codigo, nombres, apellidos, dni, correo, celular, contrasena, usuarioTipoId);
         this.tarjeta = tarjeta;
     }
 

@@ -10,7 +10,7 @@ package Dao;
  */
 public interface UsuarioDao {
 
-    public abstract boolean isExistUser(int usuarioId, String contraseña);
+    public abstract boolean isExistUser(int usuarioId, String contrasena);
 
     public abstract int userTipoId(int usuarioId);
 }

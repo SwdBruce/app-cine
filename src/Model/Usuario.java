@@ -8,29 +8,29 @@ public abstract class Usuario {
     private int dni;
     private String correo;
     private int celular;
-    private String contraseña;
+    private String contrasena;
     private int usuarioTipoId;
 
     public Usuario() {
     }
 
-    public Usuario(int codigo, String nombres, String apellidos, int dni, String correo, int celular, String contraseña, int usuarioTipoId) {
+    public Usuario(int codigo, String nombres, String apellidos, int dni, String correo, int celular, String contrasena, int usuarioTipoId) {
         this.codigo = codigo;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.dni = dni;
         this.correo = correo;
         this.celular = celular;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.usuarioTipoId = usuarioTipoId;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public int getUsuarioTipoId() {

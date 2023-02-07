@@ -15,6 +15,6 @@ public class Conexion {
     {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");        
         String url = "jdbc:sqlserver:// localhost:1433; databaseName = DBCINE";       
-        return DriverManager.getConnection(url,"sa","123");
+        return DriverManager.getConnection(url,"sa","db_data_123");
     } 
 }
